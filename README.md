@@ -20,7 +20,7 @@ http://localhost:3000/websites
 
 /*
 buscar get
-http://localhost:3000/websites?busca=palavraChave cadastrada do website
+http://localhost:3000/websites?busca= palavraChave cadastrada do website
 */
 
 /* 
