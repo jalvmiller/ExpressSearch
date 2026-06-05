@@ -1,4 +1,4 @@
-const BaseDAO = require('../BaseDAO');
+const BaseDAO = require('./BaseDAO');
 const { ObjectId } = require('mongodb');
 
 class WebsiteDAO extends BaseDAO {

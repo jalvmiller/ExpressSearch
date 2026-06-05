@@ -1,4 +1,4 @@
-const BaseDAO = require('../BaseDAO');
+const BaseDAO = require('./BaseDAO');
 
 class HistoricoDAO extends BaseDAO {
     constructor() { 

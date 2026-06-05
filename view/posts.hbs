@@ -1,0 +1,31 @@
+<DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Página Posts</title>
+    </head>
+
+    <body>
+        <h1>Posts</h1>
+        <form action="posts" method="post" accept-charset="utf-8">
+            <label for="content"> Conteúdo: </label>
+            <input type="text" name="content" value="" />
+            <input type="submit" value="Adicionar &rarr;" />
+        </form>
+        <form action="posts" method="get" accept-charset="utf-8">
+            <label for="busca"> Busca: </label>
+            <input type="" text" name="busca" value="" />
+            <input type="submit" value="busca...">
+        </form>
+
+        <ul>
+            {{#posts}}
+            <li>{{content}}</li>
+            {{/posts}}
+        </ul>
+    </body>
+
+    </html>
