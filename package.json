@@ -5,8 +5,9 @@
   "main": "backend/server.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node backend/server.js",
-    "dev": "nodemon backend/server.js",
+    "build": "tsc",
+    "start": "node dist/backend/server.js",
+    "dev": "nodemon --watch backend --ext ts --exec \"npx tsc && node dist/backend/server.js\"",
     "test": "node backend/test_api.js"
   },
   "dependencies": {
