@@ -1,0 +1,33 @@
+{
+  // CompilerOptions define regras de compilação,
+  // qual versão do JS usar, regras de tipagem, etc.
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "commonjs",
+    "lib": [
+      "es2022"
+    ],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "resolveJsonModule": true
+  },
+  // include, decide quais pastas o ts vai monitorar
+  // e compilar
+  "include": [
+    "backend/**/*",
+    "index.ts"
+  ],
+  // exclude, o quê o ts vai ignorar,
+  // dependências externas (node_modules)
+  // pastas de saída (dist)
+  // arquivos que não devem ser compilados
+  "exclude": [
+    "node_modules",
+    "dist",
+    "backend/test_api.js"
+  ]
+}
