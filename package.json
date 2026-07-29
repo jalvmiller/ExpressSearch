@@ -8,7 +8,8 @@
     "build": "tsc",
     "start": "node dist/backend/server.js",
     "dev": "nodemon --watch backend --ext ts --exec \"npx tsc && node dist/backend/server.js\"",
-    "test": "node backend/test_api.js"
+    "test": "node backend/test_api.js",
+    "frontend": "npm --prefix frontend start"
   },
   "dependencies": {
     "cors": "^2.8.6",
