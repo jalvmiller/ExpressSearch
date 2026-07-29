@@ -1,8 +1,12 @@
-# Node.js Search & Indexing Backend (`node-backend-busca`)
+<div align="center">
 
+# Simulador de Serviço de Busca <br> (`Express-Search`)
 Este é um projeto nas etapas iniciais de desenvolvimento que simula um webcrawler simples e serviço de busca e indexação de websites desenvolvido em **Express** com **TypeScript**, utilizando o banco de dados **MongoDB**.
-<br>
-Comecei esse projeto com a intenção de aprender mais sobre tecnologias ligadas à Stack MEAN (Mongo; Express; Angular; Node.js).
+<br><br>
+*Comecei esse projeto com a intenção de aprender mais sobre tecnologias ligadas à Stack MEAN (Mongo; Express; Angular; Node.js).<br>*
+<br><br>
+No momento, ele oferece uma interface com barra de pesquisa (resultados recuperados localmente); e endpoints a serem usados via requisição Postman.
+</div>
 
 ## 📂 Estrutura Atual do Projeto 
 
@@ -33,23 +37,20 @@ Search/
 └── README.md                  # Documentação do projeto (este arquivo)
 ```
 
-## Mais informações (o projeto ainda precisa de ajustes para ser utilizado de forma integral via Frontend);
+## Mais informações
 No momento, é inicializável via:
 - **Node.js** (versão 18 ou superior) instalado.
 - **MongoDB** rodando localmente (na porta padrão `27017`)
 
 ### Instalação de Dependências
-Clone o repositório, navegue até a pasta raiz do projeto e instale as dependências com o npm:
+Clone o repositório, navegue até a pasta raiz e instale as dependências com o npm:
 ```bash
 npm install
 ```
 
-## 🐳 Executando com Docker
+### 🐳 Executando com Docker
 
 Você pode executar o banco de dados e os servidores de backend e frontend de forma totalmente automatizada e empacotada através do **Docker Compose**.
-
-### Pré-requisitos
-* **Docker** e **Docker Compose** instalados na sua máquina.
 
 ### Comandos Principais do Docker
 
@@ -70,10 +71,10 @@ Por padrão, o banco de dados tentará conectar na URI `mongodb://127.0.0.1:2701
 
 ## Inicialização; execução
 
-No arquivo [package.json], estão configurados os seguintes comandos principais:
+No arquivo `package.json`, estão configurados os seguintes comandos principais:
 
 ### Executar o Frontend em Angular (`frontend`)
-Levanta o servidor de desenvolvimento do Angular:
+Sobe o servidor de desenvolvimento do Angular:
 ```bash
 npm run frontend
 ```
