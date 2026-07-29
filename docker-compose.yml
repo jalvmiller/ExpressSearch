@@ -1,0 +1,47 @@
+services:
+  # Serviço 1: Banco de Dados MongoDB
+  mongodb:
+    image: mongo:latest
+    container_name: searchdb_mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - search_net
+
+  # Serviço 2: Backend Node/Express (TypeScript)
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: searchdb_backend
+    ports:
+      - "3001:3001"
+    environment:
+      - MONGO_URL=mongodb://mongodb:27017
+    depends_on:
+      - mongodb
+    networks:
+      - search_net
+
+  # Serviço 3: Frontend Angular + Tailwind
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: searchdb_frontend
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+    networks:
+      - search_net
+
+networks:
+  search_net:
+    driver: bridge
+
+volumes:
+  mongo_data:
+    driver: local

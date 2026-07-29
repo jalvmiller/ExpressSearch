@@ -25,7 +25,7 @@ Search/
 │   │   └── Website.ts         # Definições de tipos e interfaces de Websites
 │   ├── server.ts              # Arquivo principal do servidor Express REST API
 │   └── test_api.js            # Script de testes de integração com a API REST
-├── frontend/                  # Diretório reservado para aplicação front-end
+├── frontend/                  # Aplicação SPA em Angular + Tailwind CSS
 ├── dist/                      # Diretório de build (código compilado gerado pelo tsc)
 ├── index.ts                   # Ponto de entrada CLI (testes locais via terminal sem REST)
 ├── package.json               # Gerenciador de dependências e scripts do projeto
@@ -44,12 +44,40 @@ Clone o repositório, navegue até a pasta raiz do projeto e instale as dependê
 npm install
 ```
 
+## 🐳 Executando com Docker
+
+Você pode executar o banco de dados e os servidores de backend e frontend de forma totalmente automatizada e empacotada através do **Docker Compose**.
+
+### Pré-requisitos
+* **Docker** e **Docker Compose** instalados na sua máquina.
+
+### Comandos Principais do Docker
+
+1. **Subir os Containers (Build e Inicialização)**
+   Executa o download do MongoDB e compila os containers do Angular e Node, iniciando a aplicação em segundo plano (`-d`):
+   ```bash
+   docker compose up --build -d
+   ```
+
+2. **Derrubar os Containers**
+   Para parar e remover todos os containers e redes criadas pelo Compose:
+   ```bash
+   docker compose down
+   ```
+
 ### Variáveis de Ambiente
 Por padrão, o banco de dados tentará conectar na URI `mongodb://127.0.0.1:27017/searchdb`. Caso precise alterar para uma conexão personalizada, defina a variável de ambiente `MONGO_URL` antes de inicializar o servidor.
 
 ## Inicialização; execução
 
 No arquivo [package.json], estão configurados os seguintes comandos principais:
+
+### Executar o Frontend em Angular (`frontend`)
+Levanta o servidor de desenvolvimento do Angular:
+```bash
+npm run frontend
+```
+*A interface visual do buscador ficará acessível na porta **4200** (`http://localhost:4200`).*
 
 ### 1. Modo Desenvolvimento (`dev`)
 Inicia o compilador TypeScript e reinicia automaticamente o servidor a cada alteração efetuada nos arquivos dentro da pasta `backend`:
@@ -82,8 +110,6 @@ Com o servidor rodando localmente no modo desenvolvimento (`npm run dev`), abra 
 npm run test
 ```
 *Este comando roda o script [test_api.js](file:///c:/Users/pro/Desktop/Search/backend/test_api.js), testando todas as operações do CRUD na REST API automaticamente.*
-
----
 
 ## 📡 Endpoints da API REST
 
